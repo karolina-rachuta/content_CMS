@@ -25,11 +25,11 @@ server.extend(module.superModule);
  * @param {serverfunction} - get
  */
 server.append('Show', consentTracking.consent, cache.applyDefaultCache, function (req, res, next) {
-    var ContentMgr = require('dw/content/ContentMgr');
-    var contentAssets = ContentMgr.getContent('Hero_Slider').content;
-    res.render({
-        contentAssets: contentAssets
-    });
+    // var ContentMgr = require('dw/content/ContentMgr');
+    // var contentAssets = ContentMgr.getContent('Hero_Slider').content;
+    // res.render({
+    //     contentAssets: contentAssets
+    // });
     next();
 });
 
