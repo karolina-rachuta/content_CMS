@@ -27,13 +27,13 @@ server.extend(module.superModule);
 server.append('Show', consentTracking.consent, cache.applyDefaultCache, function (req, res, next) {
     // var ContentMgr = require('dw/content/ContentMgr');
     // var contentAssets = ContentMgr.getContent('home-categories-guests');
-    var CatalogMgr = require('dw.catalog.CatalogMgr');
-    var catalog = CatalogMgr.getSiteCatalog();
-    var category = CatalogMgr.getCategory('newarrivals-womens');
-    var catDescription = category.description;
-    res.render({
-        contentAssets: contentAssets
-    });
+    // var CatalogMgr = require('dw.catalog.CatalogMgr');
+    // var catalog = CatalogMgr.getSiteCatalog();
+    // var category = CatalogMgr.getCategory('newarrivals-womens');
+    // var catDescription = category.description;
+    // res.render({
+    //     contentAssets: contentAssets
+    // });
     next();
 });
 
