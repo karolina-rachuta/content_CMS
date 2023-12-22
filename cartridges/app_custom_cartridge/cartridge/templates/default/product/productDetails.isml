@@ -124,12 +124,15 @@
                             <isinclude template="product/components/addToCartProduct" />
 
                             <iscomment> Unique Product Shipping Info </iscomment>
-                              <isset name="shippingContent" value="${pdict.shippingContent}" scope="page" />
-                              <isset name="items" value="${pdict.items}" scope="page" />
+                              <isset name="shippingContent" value="${product.shippingInfo}" scope="page" />
+                              <iscomment> <isset name="items" value="${pdict.items}" scope="page" /> </iscomment>
                 
-                             <isprint value="${dw.util.StringUtils.format(shippingContent.custom.body.markup, items)}"
+                             <isprint value="${shippingContent}"
+
                         encoding="off" />
-                        <isprint value="${pdict.items}" encoding="on" />
+
+                        <isprint value="${pdict.productID}" encoding="on" />
+                        <iscomment> <isprint value="${pdict.items}" encoding="on" /> </iscomment>
                         </div>
 
                         <!-- Social Sharing Icons -->

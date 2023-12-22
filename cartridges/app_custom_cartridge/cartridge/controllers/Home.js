@@ -26,13 +26,27 @@ server.extend(module.superModule);
  */
 server.append('Show', consentTracking.consent, cache.applyDefaultCache, function (req, res, next) {
     // var ContentMgr = require('dw/content/ContentMgr');
-    // var contentAssets = ContentMgr.getContent('home-categories-guests');
-    // var CatalogMgr = require('dw.catalog.CatalogMgr');
+    // var contentAssets = ContentMgr.getContent('kr-home-categories-guests-women');
+    // var CatalogMgr = require('dw/catalog/CatalogMgr');
     // var catalog = CatalogMgr.getSiteCatalog();
     // var category = CatalogMgr.getCategory('newarrivals-womens');
     // var catDescription = category.description;
+
+
+    // var siteRootCategory = CatalogMgr.getSiteCatalog().getRoot();
+    // var siteRootCategoryC = CatalogMgr.getSiteCatalog().getRoot().onlineSubCategories;
+
+    // var topLevelCategories = siteRootCategory.hasOnlineSubCategories()
+    // var categoryId = "womens";
+    // var category = CatalogMgr.getCategory(categoryId);
+    // var description = category.getDescription();
+    // var contentBody = contentAssets.custom.body;
+
+    
+
     // res.render({
-    //     contentAssets: contentAssets
+    //     contentAssets: contentAssets,
+    //     description: description
     // });
     next();
 });

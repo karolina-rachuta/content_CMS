@@ -1,0 +1,26 @@
+<isinclude template="/components/modules" />
+
+<h2 class="text-center"> <isprint value="${Resource.msg('msg.product.recommendation', 'common', null)}" encoding="on" /></h2>
+<div class="homepage-product-listing row">
+
+
+    <isloop items="${slotcontent.content}" var="product" status="loopState">
+
+        <div class="col-6 col-sm-4">
+            <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'pview', 'tile', 'swatches', true)}"/>
+            <h4><isprint value="${product.name}" encoding="on" /></h4>
+    
+            <isif condition="${product.shortDescription}">
+               <p><isprint value="${product.shortDescription}" encoding="on" /></p>
+            <iselse/>
+                <p><isprint value="${Resource.msg('msg.product.description', 'common', null)}" encoding="on" /></p>
+            </isif>
+
+            <iscomment> <p><isprint value="${product.price.sales.decimalPrice}" encoding="on" /></p>
+            <isset name="price" value="${product.price}" scope="page" /> </iscomment>
+
+        </div>
+
+
+    </isloop>
+</div>
