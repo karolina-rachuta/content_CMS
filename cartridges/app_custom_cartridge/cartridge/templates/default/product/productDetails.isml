@@ -125,10 +125,11 @@
 
                             <iscomment> Unique Product Shipping Info </iscomment>
                               <isset name="shippingContent" value="${pdict.shippingContent}" scope="page" />
-                              <isset name="shippingDescription" value="${pdict.shippingDescription}" scope="page" />
+                              <isset name="items" value="${pdict.items}" scope="page" />
                 
-                             <isprint value="${dw.util.StringUtils.format(shippingContent.custom.body.markup, shippingDescription)}"
+                             <isprint value="${dw.util.StringUtils.format(shippingContent.custom.body.markup, items)}"
                         encoding="off" />
+                        <isprint value="${pdict.items}" encoding="on" />
                         </div>
 
                         <!-- Social Sharing Icons -->

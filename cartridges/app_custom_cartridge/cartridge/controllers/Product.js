@@ -43,19 +43,27 @@ server.append('Show', cache.applyPromotionSensitiveCache, consentTracking.consen
     var shippingModel = dw.order.ShippingMgr.getProductShippingModel(product);
     var applicableShippingMethods = shippingModel.getApplicableShippingMethods();
 
-
+    var iterator = applicableShippingMethods.iterator();
     var item;
-    var collection = applicableShippingMethods;
-    for (var i = 0; i < collection.length; i++) {
-        item = collection[i];
-        console.log(item);
+    var items = [];
+    while (iterator.hasNext()) {
+        item = iterator.next();
+        items.push(item.description);
     }
+
+    // var item;
+    // var items = [];
+    // for (var i = 0; i < applicableShippingMethods.length; i++) {
+    //     item = applicableShippingMethods[i];
+    //     items.push(item.description);
+    // }
     var shippingDescription = item.description;
+    
 
     res.render('product/productDetails', {
         shippingContent: shippingContent,
-        shippingDescription: shippingDescription
-
+        shippingDescription: shippingDescription,
+        items: items
     });
 
     next();
