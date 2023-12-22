@@ -124,9 +124,8 @@
                             <isinclude template="product/components/addToCartProduct" />
 
                             <iscomment> Unique Product Shipping Info </iscomment>
-                                <isset name="shippingContent" value="${product.shippingInfo}" scope="page" />
-                                <isprint value="${shippingContent}" encoding="off" />
-                                <isprint value="${pdict.productID}" encoding="on" />
+                                <isset name="shippigInfo" value="${product.shippingInfo}" scope="page" />
+                                <isprint value="${shippigInfo}" encoding="off" />
                         </div>
 
                         <!-- Social Sharing Icons -->
