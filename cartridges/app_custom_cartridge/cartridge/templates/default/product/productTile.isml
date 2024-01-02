@@ -15,11 +15,10 @@
             <isinclude template="product/components/pricing/main" />
         </isif>
 
-<iscomment> <isif condition="${product.shortDescription}">
-               <p><isprint value="${product.shortDescription}" encoding="on" /></p>
-            <iselse/>
-                <p><isprint value="${Resource.msg('msg.product.description', 'common', null)}" encoding="on" /></p>
-            </isif> </iscomment>
+            <iscomment> adding shortDescription </iscomment>
+        <isif condition="${pdict.display.shortDescription !== false}">
+            <isinclude template="product/components/description" />
+        </isif>
 
         <isif condition="${pdict.display.ratings !== false}">
             <isinclude template="product/productTileFooter" />
