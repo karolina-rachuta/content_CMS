@@ -1,0 +1,16 @@
+<div>
+     <strong><isprint value="${Resource.msg('label.header.exclusive', 'confirmation', null)}" encoding="on" /></strong>
+     <isset name="product" value="${pdict.product}" scope="page" />
+     <p><isprint value="${product.productName}" encoding="on" /></p>
+     <div class="image-container">
+        <a href="${pdict.urls.product}">
+            <img class="tile-image"
+             src="${product.images.medium[0].url}"
+             alt="${product.productName}"
+             title="${product.images.medium[0].title}"
+             />
+        </a>
+     </div>
+    <p><isprint value="${product.price.sales.formatted}" encoding="on" /></p>
+    <p><isprint value="${product.shortDescription}" encoding="on" /></p>
+</div>

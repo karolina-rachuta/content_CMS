@@ -16,9 +16,14 @@
         </isif>
 
             <iscomment> adding shortDescription </iscomment>
-        <isif condition="${pdict.display.shortDescription !== false}">
-            <isinclude template="product/components/description" />
-        </isif>
+            <isset name="homePage" value="${URLUtils.https('Home-Show')}" scope="page" />
+            
+            <isif condition="${homePage}">
+                <isif condition="${pdict.display.shortDescription !== false}">
+                    <isinclude template="product/components/description" />
+                </isif>
+            </isif>
+        
 
         <isif condition="${pdict.display.ratings !== false}">
             <isinclude template="product/productTileFooter" />
