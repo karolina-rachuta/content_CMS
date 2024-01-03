@@ -171,6 +171,13 @@
                 <!--- exclusive product --->
     <isinclude template="product/exclusiveProduct" sf-toolkit="on" />
     
+                <!--- exclusive product placeholder in content body--->
+    <div>
+    <strong><isprint value="${Resource.msg('label.header.exclusive', 'confirmation', null)}" encoding="on" /></strong>
+    <isset name="exclusiveProduct" value="${pdict.exclusiveProduct}" scope="page" />
+    <isprint value="${exclusiveProduct}" encoding="off" />
+    </div>
+    
      <iscomment> <p><isprint value="${dw.util.StringUtils.format(content.custom.body.markup, productID, productID.productName, productID.shortDescription)}" encoding="on" /></p> </iscomment>
     <isinclude template="checkout/confirmation/confirmationOrderTotal" />
 </body>
