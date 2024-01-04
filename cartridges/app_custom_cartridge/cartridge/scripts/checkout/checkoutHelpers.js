@@ -15,16 +15,17 @@ function sendConfirmationEmail(order, locale) {
     var OrderModel = require('*/cartridge/models/order');
     var emailHelpers = require('*/cartridge/scripts/helpers/emailHelpers');
     var Locale = require('dw/util/Locale');
-    var product = require('*/cartridge/scripts/helpers/exclusiveProductsHelpers');
-    var exclusiveProduct = require('*/cartridge/scripts/helpers/exclusiveProductsHelpersPlaceholder');
+    var product = require('*/cartridge/scripts/helpers/exclusiveProductHelpers');
+    var products = require('*/cartridge/scripts/helpers/exclusiveProductsHelpers');
+
     var currentLocale = Locale.getLocale(locale);
 
     var orderModel = new OrderModel(order, { countryCode: currentLocale.country, containerView: 'order' });
 
     var orderObject = {
         order: orderModel,
-        product: product.getExclusiveProducts(),
-        exclusiveProduct: exclusiveProduct.getExclusiveProductsPlaceholder()
+        product: product.getExclusiveProduct(),
+        products: products.getExclusiveProducts()
     };
 
     var emailObj = {

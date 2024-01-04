@@ -5,21 +5,43 @@
  */
 function getExclusiveProducts() {
     var ContentMgr = require('dw/content/ContentMgr');
-    var content = ContentMgr.getContent('exclusive-product');
-    var exclusiveProductID = content.custom.body;
-    // var Product = require('dw/catalog/Product');
-    // var getProduct = Product.getProduct(exclusiveProductID);
+    var content = ContentMgr.getContent('exclusive-products');
     var ProductFactory = require('*/cartridge/scripts/factories/product');
-    var product = ProductFactory.get({
-        pid: exclusiveProductID,
-        pview: 'tile'
-    });
 
-    // var product = require('*/cartridge/models/product/productTile.js');
-    // var StringUtils = require('dw/util/StringUtils');
-    // var exclusiveProduct = StringUtils.format(content.custom.body.markup, product.id, product.productName, product.shortDescription);
-    return product;
+
+    // if (content && content.online) {
+    //     var exclusiveProductsIDs = content.custom.body.markup;
+    //     var pattern = /\{([^}]+)\}/g;
+    //     var products= [];
+    //     var matches = exclusiveProductsIDs.match(pattern); //[{pid1}, {pid2}]
+    //     var productIDs = matches.map((match) => match.slice(1, -1)); // [pid1, pid2]
+    
+    //     productIDs.forEach(id => {
+    //          products.push(ProductFactory.get({pid: id, pview: 'tile'}));
+    //     });
+    // }
+    
+    if (content && content.online) {
+        var exclusiveProductsIDs = content.custom.body.markup;
+        var pattern = /\{([^}]+)\}/g;
+        var products= [];
+        var matches = exclusiveProductsIDs.match(pattern); //[{pid1}, {pid2}]
+        var productIDs = matches.map((match) => match.slice(1, -1)); // [pid1, pid2]
+        var productID;
+        var products = [];
+        for (var i = 0; i < productIDs.length; i++) {
+            productID = productIDs[i];
+            var product = ProductFactory.get({
+                pid: productID,
+                pview: 'tile'
+            });
+            products.push(product);
+        }
+    }
+
+    return products;
 }
+
 
 module.exports = {
     getExclusiveProducts: getExclusiveProducts

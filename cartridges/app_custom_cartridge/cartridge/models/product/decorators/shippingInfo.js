@@ -20,7 +20,6 @@ function getShippingInformation(productID) {
         var genericContent = ContentMgr.getContent(genericContentAsset);
         return genericContent.custom.body;
     }
- // checks: if shipping conent.online if custom.body then asignt to variable // not avaiable get generiv conetn asset and aisgn it to shipping content
 }
 
 module.exports = function (object, apiProduct) {

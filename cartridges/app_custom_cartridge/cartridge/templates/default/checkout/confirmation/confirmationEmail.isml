@@ -167,17 +167,34 @@
                 <br/>
             </p>
         </isloop>
-    </isif>
-                <!--- exclusive product --->
-    <isinclude template="product/exclusiveProduct" sf-toolkit="on" />
-    
-                <!--- exclusive product placeholder in content body--->
-    <div>
-    <strong><isprint value="${Resource.msg('label.header.exclusive', 'confirmation', null)}" encoding="on" /></strong>
-    <isset name="exclusiveProduct" value="${pdict.exclusiveProduct}" scope="page" />
-    <isprint value="${exclusiveProduct}" encoding="off" />
-    </div>
-    
-     <iscomment> <p><isprint value="${dw.util.StringUtils.format(content.custom.body.markup, productID, productID.productName, productID.shortDescription)}" encoding="on" /></p> </iscomment>
+    </isif>    
+
     <isinclude template="checkout/confirmation/confirmationOrderTotal" />
+
+                 <!--- exclusive product --->
+
+    <isinclude template="product/exclusiveProduct" sf-toolkit="on" />
+
+                <!--- exclusive products --->
+
+    <isinclude template="product/exclusiveProducts" sf-toolkit="on" /> 
+
+    test
+<div>
+    <strong><isprint value="${Resource.msg('label.header.exclusiveproducts', 'confirmation', null)}" encoding="on" /></strong>
+    <isset name="products" value="${pdict.products}" scope="page" />
+    <isloop items="${products}" var="product" status="loopstatus">
+            <div class="image-container">
+            <img class="tile-image"
+             src="${product.images.medium[0].url}"
+             alt="${product.productName}"
+             title="${product.images.medium[0].title}"
+             />
+     </div>
+            <isprint value="${product.productName}" encoding="on" />
+            <isprint value="${product.shortDescription}" encoding="on" />
+            <isprint value="${product.price.sales.formatted}" encoding="on" />
+    </isloop>
+</div>
+    test
 </body>

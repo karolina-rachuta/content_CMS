@@ -1,5 +1,5 @@
 <div>
-     <strong><isprint value="${Resource.msg('label.header.exclusive', 'confirmation', null)}" encoding="on" /></strong>
+     <strong><isprint value="${Resource.msg('label.header.exclusive.product', 'confirmation', null)}" encoding="on" /></strong>
      <isset name="product" value="${pdict.product}" scope="page" />
      <p><isprint value="${product.productName}" encoding="on" /></p>
      <div class="image-container">
