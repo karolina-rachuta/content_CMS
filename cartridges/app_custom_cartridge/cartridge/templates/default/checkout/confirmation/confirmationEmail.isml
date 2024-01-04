@@ -179,22 +179,4 @@
 
     <isinclude template="product/exclusiveProducts" sf-toolkit="on" /> 
 
-    test
-<div>
-    <strong><isprint value="${Resource.msg('label.header.exclusiveproducts', 'confirmation', null)}" encoding="on" /></strong>
-    <isset name="products" value="${pdict.products}" scope="page" />
-    <isloop items="${products}" var="product" status="loopstatus">
-            <div class="image-container">
-            <img class="tile-image"
-             src="${product.images.medium[0].url}"
-             alt="${product.productName}"
-             title="${product.images.medium[0].title}"
-             />
-     </div>
-            <isprint value="${product.productName}" encoding="on" />
-            <isprint value="${product.shortDescription}" encoding="on" />
-            <isprint value="${product.price.sales.formatted}" encoding="on" />
-    </isloop>
-</div>
-    test
 </body>

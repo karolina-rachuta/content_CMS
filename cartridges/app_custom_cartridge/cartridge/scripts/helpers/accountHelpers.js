@@ -11,12 +11,14 @@ function sendCreateAccountEmail(registeredUser) {
     var Site = require('dw/system/Site');
     var Resource = require('dw/web/Resource');
     var product = require('*/cartridge/scripts/helpers/exclusiveProductsHelpers');
-
+    var products = require('*/cartridge/scripts/helpers/exclusiveProductsHelpers');
+    
     var userObject = {
         email: registeredUser.email,
         firstName: registeredUser.firstName,
         lastName: registeredUser.lastName,
         product: product.getExclusiveProducts(),
+        products: products.getExclusiveProducts(),
         url: URLUtils.https('Login-Show')
     };
 

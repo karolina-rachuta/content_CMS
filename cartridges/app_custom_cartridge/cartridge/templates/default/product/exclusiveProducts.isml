@@ -5,7 +5,7 @@
     <table class="table table-bordered table-sm">
     <tr>
     <isloop items="${products}" var="product" status="loopstatus">
-       <td colspan="1">
+       <td class="w-50">
             <div class="image-container">
             <img class="tile-image"
              src="${product.images.medium[0].url}"
@@ -13,9 +13,9 @@
              title="${product.images.medium[0].title}"
              />
             </div>
-            <isprint value="${product.productName}" encoding="on" />
-            <isprint value="${product.shortDescription}" encoding="on" />
-            <isprint value="${product.price.sales.formatted}" encoding="on" />
+            <p><isprint value="${product.productName}" encoding="on" /></p>
+            <p><isprint value="${product.shortDescription}" encoding="on" /></p>
+            <p><isprint value="${product.price.sales.formatted}" encoding="on" /></p>
        </td>
     </isloop>
     </tr>
