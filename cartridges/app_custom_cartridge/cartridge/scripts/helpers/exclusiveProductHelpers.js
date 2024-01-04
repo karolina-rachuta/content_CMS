@@ -6,13 +6,16 @@
 function getExclusiveProduct() {
     var ContentMgr = require('dw/content/ContentMgr');
     var content = ContentMgr.getContent('exclusive-product');
-    var exclusiveProductID = content.custom.body;
     var ProductFactory = require('*/cartridge/scripts/factories/product');
-    var product = ProductFactory.get({
-        pid: exclusiveProductID,
-        pview: 'tile'
-    });
-    return product;
+
+    if (content && content.online) {
+        var exclusiveProductID = content.custom.body;
+        var product = ProductFactory.get({
+            pid: exclusiveProductID,
+            pview: 'tile'
+        });
+        return product;
+    }
 }
 
 module.exports = {

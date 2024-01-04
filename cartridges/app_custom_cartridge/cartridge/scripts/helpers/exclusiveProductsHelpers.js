@@ -1,32 +1,19 @@
 'use strict';
 
 /**
- * Function to get content from the Content Asset Body with pid and to get the product base on its id from Product Factory - productTiles.js
+ * Function to get content from the Content Asset Body with pids and the product- base on its id from Product Factory - productTiles.js
  */
 function getExclusiveProducts() {
     var ContentMgr = require('dw/content/ContentMgr');
     var content = ContentMgr.getContent('exclusive-products');
     var ProductFactory = require('*/cartridge/scripts/factories/product');
-
-
-    // if (content && content.online) {
-    //     var exclusiveProductsIDs = content.custom.body.markup;
-    //     var pattern = /\{([^}]+)\}/g;
-    //     var products= [];
-    //     var matches = exclusiveProductsIDs.match(pattern); //[{pid1}, {pid2}]
-    //     var productIDs = matches.map((match) => match.slice(1, -1)); // [pid1, pid2]
-    
-    //     productIDs.forEach(id => {
-    //          products.push(ProductFactory.get({pid: id, pview: 'tile'}));
-    //     });
-    // }
     
     if (content && content.online) {
         var exclusiveProductsIDs = content.custom.body.markup;
         var pattern = /\{([^}]+)\}/g;
         var products= [];
-        var matches = exclusiveProductsIDs.match(pattern); //[{pid1}, {pid2}]
-        var productIDs = matches.map((match) => match.slice(1, -1)); // [pid1, pid2]
+        var matches = exclusiveProductsIDs.match(pattern);
+        var productIDs = matches.map((match) => match.slice(1, -1));
         var productID;
         var products = [];
         for (var i = 0; i < productIDs.length; i++) {

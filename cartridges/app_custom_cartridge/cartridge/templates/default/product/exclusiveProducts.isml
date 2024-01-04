@@ -12,7 +12,7 @@
              alt="${product.productName}"
              title="${product.images.medium[0].title}"
              />
-     </div>
+            </div>
             <isprint value="${product.productName}" encoding="on" />
             <isprint value="${product.shortDescription}" encoding="on" />
             <isprint value="${product.price.sales.formatted}" encoding="on" />
