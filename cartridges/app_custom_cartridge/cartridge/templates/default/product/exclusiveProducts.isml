@@ -1,7 +1,12 @@
 
 <div>
-    <strong><isprint value="${Resource.msg('label.header.exclusiveproducts', 'confirmation', null)}" encoding="on" /></strong>
-    <isset name="products" value="${pdict.products}" scope="page" />
+    <iscomment> <strong><isprint value="${Resource.msg('label.header.exclusiveproducts', 'confirmation', null)}" encoding="on" /></strong>
+    <isset name="products" value="${pdict.eproducts.products}" scope="page" /> </iscomment>
+    <isset name="content" value="${pdict.eproducts.exclusiveProductsIDs}" scope="page" />
+    <isprint value="${content}" encoding="off" />
+    
+    <iscomment> <isprint value="${dw.util.StringUtils.format(content)}" encoding="off" />test
+
     <table class="table table-bordered table-sm">
     <tr>
     <isloop items="${products}" var="product" status="loopstatus">
@@ -19,5 +24,5 @@
        </td>
     </isloop>
     </tr>
-    <table>
+    <table> </iscomment>
 </div>

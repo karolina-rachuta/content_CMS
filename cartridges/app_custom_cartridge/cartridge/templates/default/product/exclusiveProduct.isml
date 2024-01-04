@@ -3,10 +3,11 @@
      <isset name="product" value="${pdict.context.product}" scope="page" />
      <isset name="image" value="${pdict.context.productUrl}" scope="page" />
      <p><isprint value="${product.productName}" encoding="on" /></p>
+    
      <div class="image-container">
         <a href="${image}">
             <img class="tile-image"
-             src="${product.images.medium[0].url}"
+             src="${product.images.medium[0].absURL}"
              alt="${product.productName}"
              title="${product.images.medium[0].title}"
              />

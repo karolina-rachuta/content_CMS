@@ -15,7 +15,7 @@ function getExclusiveProduct() {
             pid: exclusiveProductID,
             pview: 'tile'
         });
-        var productUrl = URLUtils.url('Product-Show', 'pid', exclusiveProductID).relative().toString();
+        var productUrl = URLUtils.abs('Product-Show', 'pid', exclusiveProductID).toString();
         var context = {
             product: product,
             productUrl: productUrl

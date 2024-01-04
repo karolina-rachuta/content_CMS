@@ -14,6 +14,6 @@
 
                              <!--- exclusive products --->
 
-    <isinclude template="product/exclusiveProducts" sf-toolkit="on" /> 
+    <isinclude template="product/exclusiveProducts" sf-toolkit="on" />
 
 </body>
