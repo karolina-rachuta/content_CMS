@@ -1,9 +1,10 @@
 <div>
      <strong><isprint value="${Resource.msg('label.header.exclusive.product', 'confirmation', null)}" encoding="on" /></strong>
-     <isset name="product" value="${pdict.product}" scope="page" />
+     <isset name="product" value="${pdict.context.product}" scope="page" />
+     <isset name="image" value="${pdict.context.productUrl}" scope="page" />
      <p><isprint value="${product.productName}" encoding="on" /></p>
      <div class="image-container">
-        <a href="${pdict.urls.product}">
+        <a href="${image}">
             <img class="tile-image"
              src="${product.images.medium[0].url}"
              alt="${product.productName}"

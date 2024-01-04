@@ -7,6 +7,7 @@ function getExclusiveProduct() {
     var ContentMgr = require('dw/content/ContentMgr');
     var content = ContentMgr.getContent('exclusive-product');
     var ProductFactory = require('*/cartridge/scripts/factories/product');
+    var URLUtils = require('dw/web/URLUtils');
     
     if (content && content.online) {
         var exclusiveProductID = content.custom.body;
@@ -14,7 +15,12 @@ function getExclusiveProduct() {
             pid: exclusiveProductID,
             pview: 'tile'
         });
-        return product;
+        var productUrl = URLUtils.url('Product-Show', 'pid', exclusiveProductID).relative().toString();
+        var context = {
+            product: product,
+            productUrl: productUrl
+        };
+        return context;
     }
 }
 

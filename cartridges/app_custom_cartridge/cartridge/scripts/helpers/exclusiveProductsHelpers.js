@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Function to get content from the Content Asset Body with pids and the product- base on its id from Product Factory - productTiles.js
+ * Function to get content from the Content Asset Body with pids and to get the product base on its id from Product Factory - productTiles.js
  */
 function getExclusiveProducts() {
     var ContentMgr = require('dw/content/ContentMgr');
