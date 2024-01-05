@@ -9,33 +9,28 @@ function getExclusiveProducts() {
     var ProductFactory = require('*/cartridge/scripts/factories/product');
     var Template = require('dw/util/Template');
     var HashMap = require('dw/util/HashMap');
-
+    var URLUtils = require('dw/web/URLUtils');
     var newMap = new HashMap();
 
     if (content && content.online) {
         var exclusiveProductsIDs = content.custom.body.markup;
         var pattern = /\{([^}]+)\}/g;
         var products= [];
-        var placeholders = exclusiveProductsIDs.match(pattern); //[{pid1},{pid2}}]
+        var placeholders = exclusiveProductsIDs.match(pattern);
         placeholders.forEach((placeholder) => {
             var productID = placeholder.slice(1, -1)
             var product = ProductFactory.get({
                 pid: productID,
                 pview: 'tile'
             });
-
-            // newMap.put(productID, product);
-             newMap.product = JSON.stringify(product);
-
-            var productTileTemplate = new Template('product/productTile').render(newMap).text;
+   
+            newMap.product = product;
+            newMap.productUrl = URLUtils.abs('Product-Show', 'pid', productID).toString();
+            var productTileTemplate = new Template('product/emailProductTile').render(newMap).text;
             exclusiveProductsIDs = exclusiveProductsIDs.replace(placeholder, productTileTemplate);
-        }); // [pid1, pid2]
+        });
 
-    var eproducts = {
-    products: products,
-    exclusiveProductsIDs: exclusiveProductsIDs
-    }
-    return eproducts
+    return exclusiveProductsIDs
     }
 
 };
