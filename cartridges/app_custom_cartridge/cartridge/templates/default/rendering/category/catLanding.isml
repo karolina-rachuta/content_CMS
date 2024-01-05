@@ -11,6 +11,7 @@
         description="Banner at the top of Category Landing Pages"
         context-object="${pdict.category}"
     />
+     <!-- Category landing slider-->
     <isslot id="cat-landing-slider" context="category" description="Slider below the Category Banner" context-object="${pdict.category}"/>
 
     <div class="container">

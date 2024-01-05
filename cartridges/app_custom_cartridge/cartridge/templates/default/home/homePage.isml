@@ -8,15 +8,17 @@
     <!-- +1.888.555.0199 --><!--This phone is a requirement to support existing Gomez monitor of SiteGenesis. Demandware customers can remove this.-->
     <div class="home-main homepage">
         <isslot id="home-main-m" description="Main home page slot." context="global" />
+
+        <!-- HOME HERO SLIDER-->
         <isslot id="home-hero-slider" description="Main home page hero slider slot." context="global" />
     </div>
-
+        <!-- HOME LIST CATEGORY TILES-->
     <div class="container home-categories homepage">
         <div class="row home-main-categories no-gutters">
             <isslot id="home-categories-m" description="Categories slots on the home page." context="global" />
         </div>
     </div>
-
+        <!-- HOME PRODUCT FEATURED-->
     <div class="container home-product-tiles homepage">
         <div class="hp-product-grid" itemtype="http://schema.org/SomeProducts" itemid="#product">
             <isslot id="home-products-m" description="Product tiles on the home page." context="global" />
