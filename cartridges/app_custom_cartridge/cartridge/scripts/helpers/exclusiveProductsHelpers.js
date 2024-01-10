@@ -16,7 +16,7 @@ function getExclusiveProducts() {
         var exclusiveProductsContentAssetBodyMarkup = exclusiveProductsContent.custom.body.markup;
         var pattern = /\{([^}]+)\}/g;
         var products= [];
-        var placeholders = exclusiveProductsBodyMarkup.match(pattern);
+        var placeholders = exclusiveProductsContentAssetBodyMarkup.match(pattern);
         placeholders.forEach((placeholder) => {
             var productID = placeholder.slice(1, -1)
             var product = ProductFactory.get({
