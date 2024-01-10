@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+    <slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+    <slot-configuration slot-id="cat-landing-slider" context="category" context-id="electronics" configuration-id="cat-landing-slider-electronics" default="true" assigned-to-site="true">
+        <description>Slider for Electronics</description>
+        <template>slots/content/contentAssetBodySlider.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="404-banner"/>
+                <content-asset content-id="404-callout"/>
+                <content-asset content-id="404-service"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="cat-landing-slider" context="category" context-id="mens" configuration-id="cat-landing-slider-men" default="true" assigned-to-site="true">
+        <description>Slider for Men Category</description>
+        <template>slots/content/contentAssetBodySlider.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="as-seen-in-people"/>
+                <content-asset content-id="as-seen-in-instyle"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="cat-landing-slider" context="category" context-id="newarrivals" configuration-id="cat-landing-slider-newarrivals" default="true" assigned-to-site="true">
+        <description>Slider for Category New Arrivals</description>
+        <template>slots/content/contentAssetBodySlider.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="gift-additional-details"/>
+                <content-asset content-id="gift-check-balance"/>
+                <content-asset content-id="gift-details"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="cat-landing-slider" context="category" context-id="womens" configuration-id="cat-landing-slider-women" default="true" assigned-to-site="true">
+        <description>Slider for Category Women Page</description>
+        <template>slots/content/contentAssetBodySlider.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="Hero_Slider1"/>
+                <content-asset content-id="Hero_Slider2"/>
+                <content-asset content-id="Hero_Slider3"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="home-categories-m" context="global" configuration-id="home-categories-guests" default="true" assigned-to-site="true">
+        <template>slots/category/categoryTile.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <categories>
+                <category category-id="womens"/>
+                <category category-id="mens"/>
+            </categories>
+        </content>
+        <customer-groups>
+            <customer-group group-id="Unregistered"/>
+        </customer-groups>
+    </slot-configuration>
+
+    <slot-configuration slot-id="home-categories-m" context="global" configuration-id="home-categories-registered" assigned-to-site="true">
+        <template>slots/category/categoryTile.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <categories>
+                <category category-id="womens-clothing"/>
+                <category category-id="womens-jewelry"/>
+                <category category-id="womens-accessories"/>
+            </categories>
+        </content>
+        <customer-groups>
+            <customer-group group-id="Registered"/>
+        </customer-groups>
+    </slot-configuration>
+
+    <slot-configuration slot-id="home-hero-slider" context="global" configuration-id="home-hero-slider" default="true" assigned-to-site="true">
+        <description>Homepage main home page slider hero</description>
+        <template>slots/content/contentAssetBodySlider.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="Hero_Slider1"/>
+                <content-asset content-id="Hero_Slider2"/>
+                <content-asset content-id="Hero_Slider3"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="home-products-m" context="global" configuration-id="home-products-kr" default="true" assigned-to-site="true">
+        <description>Home product Tiles</description>
+        <template>slots/product/homePageProductSlot.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <products>
+                <product product-id="008884303996M"/>
+                <product product-id="008884304054M"/>
+                <product product-id="008885004557M"/>
+            </products>
+        </content>
+    </slot-configuration>
+
+</slot-configurations>
