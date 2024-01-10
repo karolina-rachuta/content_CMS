@@ -171,9 +171,6 @@
 
     <isinclude template="checkout/confirmation/confirmationOrderTotal" />
 
-                 <!--- exclusive product --->
-
-    <isinclude template="product/exclusiveProduct" sf-toolkit="on" />
 
                 <!--- exclusive products --->
 

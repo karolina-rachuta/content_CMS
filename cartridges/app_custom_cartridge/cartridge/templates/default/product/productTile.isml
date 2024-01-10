@@ -16,13 +16,10 @@
         </isif>
 
             <iscomment> adding shortDescription </iscomment>
-            <isset name="homePage" value="${URLUtils.https('Home-Show')}" scope="page" />
-            
-            <isif condition="${homePage}">
                 <isif condition="${pdict.display.shortDescription !== false}">
                     <isinclude template="product/components/description" />
                 </isif>
-            </isif>
+            
         
 
         <isif condition="${pdict.display.ratings !== false}">

@@ -10,15 +10,13 @@ function sendCreateAccountEmail(registeredUser) {
     var emailHelpers = require('*/cartridge/scripts/helpers/emailHelpers');
     var Site = require('dw/system/Site');
     var Resource = require('dw/web/Resource');
-    var context = require('*/cartridge/scripts/helpers/exclusiveProductHelpers');
-    var exclusiveProductsIDs = require('*/cartridge/scripts/helpers/exclusiveProductsHelpers');
+    var exclusiveProductsContentAssetBodyMarkup = require('*/cartridge/scripts/helpers/exclusiveProductsHelpers');
     
     var userObject = {
         email: registeredUser.email,
         firstName: registeredUser.firstName,
         lastName: registeredUser.lastName,
-        context: context.getExclusiveProduct(),
-        exclusiveProductsIDs: exclusiveProductsIDs.getExclusiveProducts(),
+        exclusiveProductsContentAssetBodyMarkup: exclusiveProductsContentAssetBodyMarkup.getExclusiveProducts(),
         url: URLUtils.https('Login-Show')
     };
 

@@ -124,7 +124,7 @@
                             <isinclude template="product/components/addToCartProduct" />
 
 
-                             <!--  Unique Product Shipping Info -->
+                                <!--  Unique Product Shipping Info -->
                                 <isset name="shippigInfo" value="${product.shippingInfo}" scope="page" />
                                 <isprint value="${shippigInfo}" encoding="off" />
                         </div>

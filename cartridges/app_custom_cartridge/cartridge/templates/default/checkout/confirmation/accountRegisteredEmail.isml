@@ -8,9 +8,6 @@
 
     <p>${Resource.msg('email.msg.new.registration.body2','registration',null)}</p>
 
-                            <!--- exclusive product --->
-
-    <isinclude template="product/exclusiveProduct" sf-toolkit="on" />
 
                              <!--- exclusive products --->
 
