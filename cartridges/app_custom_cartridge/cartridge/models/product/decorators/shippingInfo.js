@@ -13,11 +13,11 @@ function getShippingInformation(productID) {
     var ContentMgr = require('dw/content/ContentMgr');
     var shippingContentAsset = 'shipping-info-' + productID;
     var shippingContent = ContentMgr.getContent(shippingContentAsset);
-    var genericContentAsset = 'shipping-info-generic';
-    var genericContent = ContentMgr.getContent(genericContentAsset);
     if (shippingContent && shippingContent.online && shippingContent.custom.body) {
         return shippingContent.custom.body;
-    } else if (genericContent && genericContent.custom.body && genericContent.online) {
+    } else {
+        var genericContentAsset = 'shipping-info-generic';
+        var genericContent = ContentMgr.getContent(genericContentAsset);
         return genericContent.custom.body;
     }
 }

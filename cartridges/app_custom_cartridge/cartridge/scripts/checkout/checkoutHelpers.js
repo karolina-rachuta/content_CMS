@@ -15,7 +15,7 @@ function sendConfirmationEmail(order, locale) {
     var OrderModel = require('*/cartridge/models/order');
     var emailHelpers = require('*/cartridge/scripts/helpers/emailHelpers');
     var Locale = require('dw/util/Locale');
-    var exclusiveProductsContentAssetBodyMarkup = require('*/cartridge/scripts/helpers/exclusiveProductsHelpers');
+    var exclusiveProductsHelpers = require('*/cartridge/scripts/helpers/exclusiveProductsHelpers');
 
     var currentLocale = Locale.getLocale(locale);
 
@@ -23,7 +23,7 @@ function sendConfirmationEmail(order, locale) {
 
     var orderObject = {
         order: orderModel,
-        exclusiveProductsContentAssetBodyMarkup: exclusiveProductsContentAssetBodyMarkup.getExclusiveProducts()
+        exclusiveProductsContent: exclusiveProductsHelpers.getExclusiveProducts()
     };
 
     var emailObj = {

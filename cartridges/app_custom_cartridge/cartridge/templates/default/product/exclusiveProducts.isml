@@ -1,5 +1,5 @@
 
 <div>
-    <isset name="content" value="${pdict.exclusiveProductsContentAssetBodyMarkup}" scope="page" />
+    <isset name="content" value="${pdict.exclusiveProductsContent}" scope="page" />
     <isprint value="${content}" encoding="off" />
 </div>
