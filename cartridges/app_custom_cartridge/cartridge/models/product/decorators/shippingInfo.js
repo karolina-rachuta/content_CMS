@@ -18,8 +18,11 @@ function getShippingInformation(productID) {
     } else {
         var genericContentAsset = 'shipping-info-generic';
         var genericContent = ContentMgr.getContent(genericContentAsset);
-        return genericContent.custom.body;
+        if (genericContent && genericContent.online && genericContent.custom.body) {
+            return genericContent.custom.body;
+        }
     }
+    return '';
 }
 
 module.exports = function (object, apiProduct) {
